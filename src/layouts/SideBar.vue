@@ -34,7 +34,7 @@
 <script setup>
 import SidebarItem from './SidebarItem.vue'
 
-import Logo from '@/assets/logo.svg'
+import Logo from '@/assets/Logo.svg'
 import HomeIcon from '@/assets/icons/sidebar/home.svg'
 import SessionsIcon from '@/assets/icons/sidebar/sessions.svg'
 import PatientIcon from '@/assets/icons/sidebar/patient.svg'
