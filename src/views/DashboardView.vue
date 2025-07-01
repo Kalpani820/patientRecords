@@ -1,9 +1,7 @@
 <template>
   <div class="layout right-side">
-
-
-    <button class="menu-toggle" @click="toggleSidebar">
-      <span class="material-symbols-outlined">menu</span>
+    <button class="menu-toggle" @click="toggleSidebar" aria-label="Open sidebar">
+      <span class="material-symbols-outlined" aria-hidden="true">menu</span>
     </button>
     <Sidebar :class="{ open: isSidebarOpen }" @changeView="handleViewChange" />
     <div :class="['main-content-wrapper', { 'timeline-open': isTimelineOpen }]">
@@ -14,7 +12,10 @@
           <DetailsTabs />
           <PatientCard />
         </main>
-        <TimelinePanel :isOpen="isTimelineOpen" @toggle="toggleTimeline" />
+        <Transition name="slide-fade">
+          <TimelinePanel :isOpen="isTimelineOpen" @toggle="toggleTimeline" />
+        </Transition>
+
       </template>
 
       <template v-else>

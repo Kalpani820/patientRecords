@@ -21,13 +21,17 @@
     cursor: pointer;
     transition: background 0.3s;
     color: $sidebar-text;
+    transition: all 0.2s ease-in-out;
 
     &:hover {
       background-color: $sidebar-hover-bg;
+      transform: translateY(-1px);
     }
 
     &.active {
       background-color: $sidebar-active-bg;
+      transform: scale(0.97);
+
     }
 
     .text {
@@ -196,7 +200,8 @@
   flex-grow: 1;
   min-width: 0;
   background: $bg-secondary;
-  transition: width 0.3s ease;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .main-content-wrapper {
@@ -209,6 +214,8 @@
     .main-content {
       width: calc(100% - 350px);
       flex: none;
+      opacity: 1;
+    transform: translateY(0);
     }
   }
 }
@@ -548,3 +555,16 @@
     }
   }
 }
+
+.slide-fade-enter-active {
+  transition: all 0.3s ease;
+}
+.slide-fade-enter-from {
+  opacity: 0;
+  transform: translateX(20px);
+}
+.slide-fade-leave-to {
+  opacity: 0;
+  transform: translateX(20px);
+}
+
