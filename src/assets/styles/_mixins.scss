@@ -1,0 +1,43 @@
+@use 'variables' as *;
+@use 'font' as *;
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin outline-button {
+  gap: 0.4rem;
+  border: 1px solid $gray-divider;
+  background: white;
+  color: $dark-green;
+  font-weight: $font-semibold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+@mixin custom-scrollbar($height-offset) {
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: calc(100% - #{$height-offset});
+
+  &::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $gray-light;
+    border-radius: 5px;
+  }
+}
