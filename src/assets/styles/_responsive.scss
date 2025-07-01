@@ -1,0 +1,128 @@
+@use 'mixins' as *;
+@use 'variables' as *;
+@use 'font' as *;
+
+.sidebar {
+  @include respond(tablet) {
+    width: 18%;
+    min-width: 180px;
+
+    .logo-icon {
+      width: 80px;
+    }
+    .logo {
+      justify-content: center;
+    }
+
+    .sidebar-item {
+      .text {
+        font-size: $font-12;
+      }
+    }
+  }
+
+  @include respond(mobile) {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    z-index: 1000;
+    background: $sidebar-bg;
+
+    &.open {
+      transform: translateX(0);
+    }
+
+    .logo-icon {
+      width: 70px;
+      text-align: center;
+    }
+
+    .logo {
+      justify-content: center;
+    }
+
+    .nav-links {
+      gap: 1rem;
+    }
+
+    .sidebar-item {
+      padding: 0.75rem;
+
+      .text {
+        font-size: $font-14;
+      }
+
+      .arrow {
+        font-size: $font-14;
+      }
+    }
+
+    .user-card {
+      flex-direction: row;
+      padding: 1rem;
+
+      .avatar {
+        width: 32px;
+        height: 32px;
+      }
+
+      .info span {
+        font-size: $font-12;
+      }
+
+      .info small {
+        font-size: $font-12;
+      }
+
+      .arrow {
+        font-size: $font-14;
+      }
+    }
+  }
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  color: $sidebar-text;
+  background-color: $dark-green;
+  border-radius: 6px;
+  cursor: pointer;
+
+  @include respond(mobile) {
+    display: block;
+  }
+}
+
+.main-content {
+  @include respond(tablet) {
+    .breadcrumb {
+      font-size: $font-12;
+    }
+  }
+  @include respond(mobile) {
+    .breadcrumb {
+      gap: 0rem;
+    }
+  }
+}
+
+.layout {
+  @include respond(tablet) {
+    .small-screen-header {
+      display: flex;
+      background-color: $text-white;
+      height: 60px;
+    }
+  }
+  @include respond(mobile) {
+  }
+}

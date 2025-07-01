@@ -1,17 +1,19 @@
 <template>
   <div class="layout right-side">
-    <Sidebar @changeView="handleViewChange" />
 
+
+    <button class="menu-toggle" @click="toggleSidebar">
+      <span class="material-symbols-outlined">menu</span>
+    </button>
+    <Sidebar :class="{ open: isSidebarOpen }" @changeView="handleViewChange" />
     <div :class="['main-content-wrapper', { 'timeline-open': isTimelineOpen }]">
       <template v-if="selectedView === 'patient'">
         <main class="main-content">
-          <!-- Show either default or full patient record view -->
-
+           <div class="small-screen-header"></div>
           <BreadcrumbNav />
           <DetailsTabs />
           <PatientCard />
         </main>
-
         <TimelinePanel :isOpen="isTimelineOpen" @toggle="toggleTimeline" />
       </template>
 
@@ -40,6 +42,8 @@ import DefaultView from '../components/DefaultView.vue'
 const selectedView = ref('patient') // default or 'patient'
 
 const isTimelineOpen = ref(false)
+const isSidebarOpen = ref(false)
+
 const toggleTimeline = () => {
   isTimelineOpen.value = !isTimelineOpen.value
 }
@@ -47,5 +51,13 @@ const toggleTimeline = () => {
 // This will be passed down to sidebar to change view
 const handleViewChange = (view) => {
   selectedView.value = view
+  isSidebarOpen.value = false // auto-close on mobile
 }
+
+
+
+function toggleSidebar() {
+  isSidebarOpen.value = !isSidebarOpen.value
+}
+
 </script>

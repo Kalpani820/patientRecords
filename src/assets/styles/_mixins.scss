@@ -1,6 +1,14 @@
 @use 'variables' as *;
 @use 'font' as *;
 
+@mixin respond($breakpoint) {
+  @if $breakpoint == tablet {
+    @media (max-width: 1024px) { @content; }
+  } @else if $breakpoint == mobile {
+    @media (max-width: 768px) { @content; }
+  }
+}
+
 @mixin flex-between {
   display: flex;
   justify-content: space-between;
@@ -18,7 +26,6 @@
   border: 1px solid $gray-divider;
   background: white;
   color: $dark-green;
-  font-weight: $font-semibold;
   border-radius: 6px;
   cursor: pointer;
 }
