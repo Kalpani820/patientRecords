@@ -35,10 +35,10 @@
 import SidebarItem from './SidebarItem.vue'
 
 import Logo from '@/assets/Logo.svg'
-import HomeIcon from '@/assets/icons/sidebar/home.svg'
-import SessionsIcon from '@/assets/icons/sidebar/sessions.svg'
-import PatientIcon from '@/assets/icons/sidebar/patient.svg'
-import MediaIcon from '@/assets/icons/sidebar/media.svg'
-import ConsultIcon from '@/assets/icons/sidebar/consult.svg'
-import StatsIcon from '@/assets/icons/sidebar/stats.svg'
+import HomeIcon from '@/assets/icons/sideBar/home.svg'
+import SessionsIcon from '@/assets/icons/sideBar/sessions.svg'
+import PatientIcon from '@/assets/icons/sideBar/patient.svg'
+import MediaIcon from '@/assets/icons/sideBar/media.svg'
+import ConsultIcon from '@/assets/icons/sideBar/consult.svg'
+import StatsIcon from '@/assets/icons/sideBar/stats.svg'
 </script>
